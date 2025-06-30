@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio - Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Sobre Mim</a></li>
+      <li><a href="formacao.html">Formação</a></li>
+      <li><a href="portfolio.html" class="ativo">Portfólio</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <button id="botao-tema" onclick="alternarTema()">🌗 Alternar Tema</button>
+
+  <main class="container">
+    <h1>Meu Portfólio</h1>
+    <ul>
+      <li><a href="https://iagofreire2.github.io/tecno-logica/" target="_blank">Projeto 1 Blog</a></li>
+      <li><a href="https://iagofreire2.github.io/lista-tarefas/" target="_blank">Projeto 2 Lista de Tarefas</a></li>
+    </ul>
+  </main>
+
+  <script>
+    if (localStorage.getItem("tema") === "escuro") {
+      document.body.classList.add("modo-escuro");
+    }
+    function alternarTema() {
+      document.body.classList.toggle("modo-escuro");
+      if (document.body.classList.contains("modo-escuro")) {
+        localStorage.setItem("tema", "escuro");
+      } else {
+        localStorage.setItem("tema", "claro");
+      }
+    }
+  </script>
+</body>
+</html>

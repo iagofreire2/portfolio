@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formação</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Sobre Mim</a></li>
+      <li><a href="formacao.html" class="ativo">Formação</a></li>
+      <li><a href="portfolio.html">Portfólio</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <button id="botao-tema" onclick="alternarTema()">🌗 Alternar Tema</button>
+
+  <main class="container">
+    <h1>Formação Acadêmica</h1>
+    <p>Cursando Análise e Desenvolvimento de Sistemas - Faculdade Uninter</p>
+
+    <p>
+      <strong>Cursos:</strong><br />
+      Testes Automáticos + Teste de Software<br />
+      Agile QA Planning<br />
+      Lógica de Programação com Portugol Studio a Partir do Zero<br />
+      Postman(2023): Do zero ao avançado + Testes Automatizados<br />
+      Testes Exploratórios<br />
+      Curso para Certificação Agile Tester (CTFL-AT) - ISTQB/BSTQB<br />
+      Dominando Postman (2023): Testando e Automatizando APIs<br />
+      Aprenda BDD com Cucumber em JAVA<br />
+      Excelência em Gestão da Qualidade e Metodologia Lean 6 Sigma<br />
+      JavaScript para QAs<br />
+      Testando API Rest com REST-assured
+    </p>
+
+    <h2>Idiomas</h2>
+    <p>Português e Inglês</p>
+  </main>
+
+  <script>
+    // Aplica tema salvo ao carregar a página
+    if (localStorage.getItem("tema") === "escuro") {
+      document.body.classList.add("modo-escuro");
+    }
+
+    // Alterna entre claro/escuro e salva no navegador
+    function alternarTema() {
+      document.body.classList.toggle("modo-escuro");
+      if (document.body.classList.contains("modo-escuro")) {
+        localStorage.setItem("tema", "escuro");
+      } else {
+        localStorage.setItem("tema", "claro");
+      }
+    }
+  </script>
+</body>
+</html>

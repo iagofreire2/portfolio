@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato - Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Sobre Mim</a></li>
+      <li><a href="formacao.html">Formação</a></li>
+      <li><a href="portfolio.html">Portfólio</a></li>
+      <li><a href="contato.html" class="ativo">Contato</a></li>
+    </ul>
+  </nav>
+
+  <button id="botao-tema" onclick="alternarTema()">🌗 Alternar Tema</button>
+
+  <main class="container">
+    <h1>Contato</h1>
+
+    <form onsubmit="return validarFormulario()">
+      <label for="nome">Nome:</label><br />
+      <input type="text" id="nome" name="nome" /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" /><br /><br />
+
+      <label for="mensagem">Mensagem:</label><br />
+      <textarea id="mensagem" name="mensagem" rows="5"></textarea><br /><br />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <script>
+    if (localStorage.getItem("tema") === "escuro") {
+      document.body.classList.add("modo-escuro");
+    }
+    function alternarTema() {
+      document.body.classList.toggle("modo-escuro");
+      if (document.body.classList.contains("modo-escuro")) {
+        localStorage.setItem("tema", "escuro");
+      } else {
+        localStorage.setItem("tema", "claro");
+      }
+    }
+
+    // Validação simples do formulário
+    function validarFormulario() {
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensagem = document.getElementById("mensagem").value.trim();
+
+      if (!nome || !email || !mensagem) {
+        alert("Por favor, preencha todos os campos.");
+        return false;
+      }
+      alert("Mensagem enviada com sucesso!");
+      return true;
+    }
+  </script>
+</body>
+</html>
